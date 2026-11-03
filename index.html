@@ -12,12 +12,7 @@ html{scroll-behavior:smooth}
 body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--noir);background:var(--fond);line-height:1.5;-webkit-font-smoothing:antialiased}
 img{display:block;width:100%}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-.barre{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--ligne)}
-.barre .wrap{display:flex;align-items:center;justify-content:flex-end;height:58px}
-.logo{font-weight:800;letter-spacing:.06em;font-size:15px;white-space:nowrap}
-.logo span{color:var(--rouge)}
-.barre a.tel{font-weight:700;color:var(--noir);text-decoration:none;font-size:15px;border:1.5px solid var(--noir);border-radius:999px;padding:7px 14px;white-space:nowrap}
-@media(max-width:560px){.logo .suite{display:none}.barre a.tel{font-size:14px;padding:7px 11px}}
+
 .hero{position:relative;color:#fff}
 .hero .photo{height:520px;object-fit:cover;width:100%}
 .hero .voile{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,12,16,.38) 0%,rgba(10,12,16,.12) 32%,rgba(10,12,16,.88) 100%)}
@@ -69,14 +64,9 @@ details p{color:var(--gris);font-size:14.5px;margin-top:8px}
 .final h2{color:#fff}
 .final p{color:#c8ced6;margin:8px auto 20px;max-width:480px;font-size:15.5px}
 .final .tel2{display:block;margin-top:14px;color:#fff;font-weight:750;text-decoration:none}
-footer{padding:26px 0 110px;color:var(--gris);font-size:13px;text-align:center}
+footer{padding:26px 0 30px;color:var(--gris);font-size:13px;text-align:center}
 footer .nom{color:var(--noir);font-weight:800;font-size:14.5px}
-.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--ligne);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px}
-.sticky .cta{flex:1;justify-content:center;padding:14px;font-size:16px;border-radius:10px}
-.sticky .appel{flex:0 0 54px;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--noir);border-radius:10px;font-size:21px;text-decoration:none}
-.sticky{transition:transform .25s ease}
-html.bar-wait .sticky{transform:translateY(110%)}
-html.bar-wait.bar-on .sticky{transform:none}
+
 @media(max-width:759px){
  .hero .photo{height:600px}
  .hero .contenu{padding-bottom:18px}
@@ -92,7 +82,6 @@ html.bar-wait.bar-on .sticky{transform:none}
  .grille{grid-template-columns:1fr 1fr}
  .couts{grid-template-columns:repeat(3,1fr)}
  .pas{grid-template-columns:repeat(3,1fr)}
- .sticky{display:none}
  footer{padding-bottom:30px}
  .panneau.ouvert{align-items:center}
  .boite{border-radius:20px}
@@ -348,12 +337,6 @@ html.bar-wait.bar-on .sticky{transform:none}
 </head>
 <body>
 
-<div class="barre">
-  <div class="wrap">
-    <a class="tel" href="tel:+15149271340">514&nbsp;927-1340</a>
-  </div>
-</div>
-
 <header class="hero">
   <img class="photo" src="img/routier.jpg" alt="Le lac Raymond, au bord du terrain de la rue du Routier">
   <div class="voile"></div>
@@ -492,22 +475,7 @@ html.bar-wait.bar-on .sticky{transform:none}
   </div>
 </footer>
 
-<div class="sticky">
-  <button class="cta" data-open-chat>Recevoir le dossier complet</button>
-  <a class="appel" href="tel:+15149271340" aria-label="Appeler Shawn">📞</a>
-</div>
-<script>
-(function(){
-  var root=document.documentElement;
-  var bar=document.querySelector(".sticky");
-  var heroBtn=document.querySelector(".hero [data-open-chat]");
-  if(!bar||!heroBtn||!("IntersectionObserver" in window))return;
-  root.classList.add("bar-wait");
-  new IntersectionObserver(function(entries){
-    entries.forEach(function(e){root.classList.toggle("bar-on",!e.isIntersecting);});
-  },{threshold:0}).observe(heroBtn);
-})();
-</script>
+
 
     <!-- Bulle proactive -->
     <div class="proactive hidden" id="proactive">
