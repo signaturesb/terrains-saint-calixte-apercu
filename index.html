@@ -335,38 +335,38 @@ footer .nom{color:var(--noir);font-weight:800;font-size:14.5px}
   if(window.sbHasConsent()) window.sbStartPixel();
 </script>
 <style>
-.hero2{background:#0b0d10;color:#fff;padding:28px 0 34px}
-.hero2 h1{font-size:40px;line-height:1.12;font-weight:850;max-width:640px;margin-top:14px}
-.hero2 .sous{margin-top:10px;font-size:17.5px;max-width:640px;color:#e8eaed}
-.hero2 .cta{margin-top:20px}
-.hero2 .micro{margin-top:14px;font-size:14.5px;color:#b9bec6;max-width:640px}
-.carrousel{position:relative;width:100%;height:480px;overflow:hidden;border-radius:14px;margin-top:24px;background:#000;transition:height .45s ease}
-.carrousel .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s ease}
-.carrousel .photo.active{opacity:1}
-.car-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:46px;height:46px;border-radius:50%;border:none;background:rgba(10,12,16,.5);color:#fff;font-size:30px;line-height:1;cursor:pointer}
-.car-btn:hover{background:rgba(10,12,16,.78)}
+.carrousel{position:relative;height:520px;overflow:hidden;background:#0b0d10}
+.carrousel .slide{position:absolute;inset:0;opacity:0;transition:opacity .7s ease;overflow:hidden}
+.carrousel .slide.active{opacity:1}
+.carrousel .slide::before{content:"";position:absolute;inset:0;background-image:var(--bg);background-size:cover;background-position:center;filter:blur(26px) brightness(.72);transform:scale(1.15)}
+.carrousel .slide img{position:relative;display:block;width:100%;height:100%;object-fit:contain;object-position:center top}
+.carte .ph img{height:auto;aspect-ratio:16/9;object-fit:cover}
+.car-btn{position:absolute;top:34%;transform:translateY(-50%);z-index:4;width:46px;height:46px;border-radius:50%;border:none;background:rgba(10,12,16,.5);color:#fff;font-size:30px;line-height:1;cursor:pointer}
+.car-btn:hover{background:rgba(10,12,16,.75)}
 .car-prev{left:14px}.car-next{right:14px}
 .car-compteur{position:absolute;top:14px;right:14px;z-index:4;background:rgba(10,12,16,.55);color:#fff;font-size:13px;font-weight:700;letter-spacing:.06em;padding:5px 11px;border-radius:999px}
-.carte .ph img{height:auto;aspect-ratio:16/9;object-fit:cover}
-@media(max-width:759px){.hero2 h1{font-size:30px;line-height:1.08}.hero2 .sous{font-size:16px}.hero2 .cta{width:100%;justify-content:center}}
+@media(max-width:759px){.carrousel{height:600px}}
 </style>
 </head>
 <body>
 
-<header class="hero2">
-  <div class="wrap">
-    <span class="badge">RUE VERCINGÉTORIX — SAINT-CALIXTE</span>
-    <h1>Ton terrain boisé de 38&#160;577 pi² à Saint-Calixte</h1>
-    <p class="sous"><strong>77&#160;777&#160;$</strong> · 2,02&#160;$/pi² · Étude de sol incluse · Accès au lac · À 10 minutes de Saint-Lin</p>
-    <button class="cta" data-open-chat>Recevoir le dossier complet — gratuit</button>
-    <p class="micro">Plans, étude de sol et vrais coûts de services, pour ce terrain. Sans frais, sans engagement — Shawn vous rappelle personnellement.</p>
-    <div class="carrousel" id="hero-carrousel">
-      <img class="photo active" src="img/slide-1.jpg" alt="Terrain rue Vercingétorix, vue aérienne du périmètre">
-      <img class="photo" src="img/slide-2.jpg" alt="Le lac Siesta, à côté du terrain rue Vercingétorix">
-      <img class="photo" src="img/slide-3.jpg" alt="Le secteur boisé autour du terrain rue Vercingétorix">
-      <button class="car-btn car-prev" type="button" aria-label="Photo précédente">&#8249;</button>
-      <button class="car-btn car-next" type="button" aria-label="Photo suivante">&#8250;</button>
-      <span class="car-compteur" id="car-compteur">1 / 3</span>
+<header class="hero">
+  <div class="carrousel" id="hero-carrousel">
+    <div class="slide active" style="--bg:url('img/slide-1.jpg')"><img src="img/slide-1.jpg" alt="Terrain rue Vercingétorix, vue aérienne du périmètre"></div>
+    <div class="slide" style="--bg:url('img/slide-2.jpg')"><img src="img/slide-2.jpg" alt="Le lac Siesta, à côté du terrain rue Vercingétorix"></div>
+    <div class="slide" style="--bg:url('img/slide-3.jpg')"><img src="img/slide-3.jpg" alt="Le secteur boisé autour du terrain rue Vercingétorix"></div>
+    <button class="car-btn car-prev" type="button" aria-label="Photo précédente">&#8249;</button>
+    <button class="car-btn car-next" type="button" aria-label="Photo suivante">&#8250;</button>
+    <span class="car-compteur" id="car-compteur">1 / 3</span>
+  </div>
+  <div class="voile"></div>
+  <div class="contenu">
+    <div class="wrap">
+      <span class="badge">RUE VERCINGÉTORIX — SAINT-CALIXTE</span>
+      <h1>Ton terrain boisé de 38&#160;577 pi² à Saint-Calixte</h1>
+      <p class="sous"><strong>77&#160;777&#160;$</strong> · 2,02&#160;$/pi² · Étude de sol incluse · Accès au lac · À 10 minutes de Saint-Lin</p>
+      <button class="cta" data-open-chat>Recevoir le dossier complet — gratuit</button>
+      <p class="micro">Plans, étude de sol et vrais coûts de services, pour ce terrain. Sans frais, sans engagement — Shawn vous rappelle personnellement.</p>
     </div>
   </div>
 </header>
@@ -1257,25 +1257,21 @@ var _pa = document.querySelector("img[data-avatar-copy]"); if (_pa && AVATAR_SRC
 </script>
 <script>
 (function(){
-  var slides = document.querySelectorAll("#hero-carrousel .photo");
+  var slides = document.querySelectorAll("#hero-carrousel .slide");
   var compteur = document.getElementById("car-compteur");
   if(!slides.length) return;
-  var ratios = [1078/1920, 1440/1920, 1078/1920];
-  var car = document.getElementById("hero-carrousel");
   var i = 0, timer = null;
-  function fit(){ if(car) car.style.height = Math.round(car.clientWidth * ratios[i]) + "px"; }
   function show(n){
     slides[i].classList.remove("active");
     i = (n + slides.length) % slides.length;
     slides[i].classList.add("active");
     if(compteur) compteur.textContent = (i + 1) + " / " + slides.length;
-    fit();
   }
   function auto(){ timer = setInterval(function(){ show(i + 1); }, 5000); }
   function reset(){ if(timer) clearInterval(timer); auto(); }
   document.querySelector(".car-prev").addEventListener("click", function(){ show(i - 1); reset(); });
   document.querySelector(".car-next").addEventListener("click", function(){ show(i + 1); reset(); });
-  var x0 = null;
+  var x0 = null, car = document.getElementById("hero-carrousel");
   car.addEventListener("touchstart", function(e){ x0 = e.touches[0].clientX; }, {passive:true});
   car.addEventListener("touchend", function(e){
     if(x0 === null) return;
@@ -1283,8 +1279,6 @@ var _pa = document.querySelector("img[data-avatar-copy]"); if (_pa && AVATAR_SRC
     if(Math.abs(dx) > 40){ show(dx < 0 ? i + 1 : i - 1); reset(); }
     x0 = null;
   }, {passive:true});
-  window.addEventListener("resize", fit);
-  fit();
   auto();
 })();
 </script>
