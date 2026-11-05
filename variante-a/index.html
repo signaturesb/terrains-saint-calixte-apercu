@@ -370,7 +370,7 @@ footer .nom{color:var(--noir);font-weight:800;font-size:14.5px}
         <li><b>Rue des Trembles</b> — facile à construire</li>
       </ul>
       <button class="cta" data-open-chat>Recevoir le dossier complet — gratuit</button>
-      <p class="micro">Plans, études de sol et vrais coûts de services, par terrain. Sans frais, sans engagement — Shawn vous rappelle personnellement.</p>
+      <p class="micro">Plans, études de sol et vrais coûts de services, par terrain. Sans frais, sans engagement.</p>
     </div>
   </div>
 </header>
@@ -381,7 +381,6 @@ footer .nom{color:var(--noir);font-weight:800;font-size:14.5px}
     <div class="chip"><b>✓</b> Financement facile, à partir de 450&#160;$/mois</div>
     <div class="chip"><b>✓</b> Vente avec garantie légale</div>
     <div class="chip"><b>✓</b> Documents complets disponibles sur demande : fiches, plans, déclarations du vendeur et études de sol</div>
-    <div class="chip"><b>✓</b> Shawn te contacte personnellement</div>
   </div>
 </div>
 
@@ -469,7 +468,7 @@ footer .nom{color:var(--noir);font-weight:800;font-size:14.5px}
     <h2>Comment ça marche</h2>
     <div class="pas">
       <div class="pa"><div class="num">1</div><div><h3>Recevez le dossier complet</h3><p>Plans, étude de sol, fiche du terrain et chiffres de services. Vous comparez à tête reposée, sans pression.</p></div></div>
-      <div class="pa"><div class="num">2</div><div><h3>Visitez avec Shawn</h3><p>Les 4 terrains sont à quelques minutes les uns des autres : un seul déplacement pour marcher chacun d'eux.</p></div></div>
+      <div class="pa"><div class="num">2</div><div><h3>Visitez les terrains</h3><p>Les 4 terrains sont à quelques minutes les uns des autres : un seul déplacement pour marcher chacun d'eux.</p></div></div>
       <div class="pa"><div class="num">3</div><div><h3>Achetez accompagné</h3><p>Promesse d'achat, financement et notaire : un courtier d'expérience en construction vous suit jusqu'au bout, avec garantie légale.</p></div></div>
     </div>
   </div>
@@ -481,13 +480,13 @@ footer .nom{color:var(--noir);font-weight:800;font-size:14.5px}
     <details><summary>Y a-t-il des services municipaux (aqueduc, égout) ?</summary><p>Non. Chaque terrain fonctionne avec un puits artésien et une installation septique — c'est le standard du secteur, et les fourchettes de coûts sont affichées plus haut, sans cachette.</p></details>
     <details><summary>L'étude de sol est-elle vraiment incluse ?</summary><p>Oui, pour les 4 terrains. Par exemple, celle de la rue des Trembles (INGÉO, juin 2026) confirme un sol très perméable. Vous la recevez dans le dossier gratuit, avant toute décision.</p></details>
     <details><summary>Autoconstruction ou maison clé en main ?</summary><p>Les deux sont possibles. Les acheteurs actuels des terrains se partagent entre autoconstructeurs et projets clé en main — dites votre type de projet à Batiste, le dossier et la visite s'ajustent.</p></details>
-    <details><summary>Puis-je visiter avant de décider ?</summary><p>Oui — c'est même l'étape recommandée. Demandez le dossier, puis Shawn vous fait marcher le ou les terrains qui vous intéressent, sur rendez-vous.</p></details>
+    <details><summary>Puis-je visiter avant de décider ?</summary><p>Oui — c'est même l'étape recommandée. Demandez le dossier, puis planifiez votre visite des terrains qui vous intéressent, sur rendez-vous.</p></details>
 
     <div class="final">
       <h2>Recevez le dossier complet des 4 terrains</h2>
       <p>Plans, études de sol, prix au pi² et coûts de services — tout ce qu'il faut pour choisir ton terrain.</p>
       <button class="cta" data-open-chat>Recevoir le dossier complet — gratuit</button>
-      <a class="tel2" href="tel:+15149271340">ou appelez Shawn : 514&#160;927-1340</a>
+      <a class="tel2" href="tel:+15149271340">ou appelez Signature SB : 514&#160;927-1340</a>
     </div>
   </div>
 </section>
@@ -591,7 +590,7 @@ var _pa = document.querySelector("img[data-avatar-copy]"); if (_pa && AVATAR_SRC
       var TIMELINE_OPTIONS = ["Le plus tôt possible","D'ici 6 mois","L'an prochain","Je m'informe"];
       var DOC_OPTIONS = ["Oui, toute la documentation","Non, juste un rappel"];
       var INTENT_OPTIONS = ["Recevoir le dossier complet","Planifier une visite"];
-      var VISIT_OPTIONS = ["Cette semaine","Cette fin de semaine","À convenir avec Shawn"];
+      var VISIT_OPTIONS = ["Cette semaine","Cette fin de semaine","À convenir"];
       function isValidEmail(value) {
         if (typeof value !== "string" || value.length > 254) return false;
         var parts = value.split("@");
@@ -644,22 +643,22 @@ var _pa = document.querySelector("img[data-avatar-copy]"); if (_pa && AVATAR_SRC
         var q = raw.toLowerCase();
         var qn = q.normalize ? q.normalize("NFD").replace(/[\u0300-\u036f]/g,"") : q;
         if(qn.indexOf("taxes municipales")>-1 || qn.indexOf("taxe municipale")>-1){
-          return "Je n'ai pas le montant exact des taxes municipales pour ces terrains. Shawn te le confirmera lors de son appel.";
+          return "Je n'ai pas le montant exact des taxes municipales pour ces terrains. Signature SB te le confirmera lors de son appel.";
         }
         if(qn.indexOf("tps")>-1 || qn.indexOf("tvq")>-1 || ((qn.indexOf("taxe")>-1) && (qn.indexOf("incluse")>-1 || qn.indexOf("incluses")>-1 || qn.indexOf("en sus")>-1 || qn.indexOf("plus les")>-1))){
           return "Les prix affichés sont plus TPS/TVQ.";
         }
         if(qn.indexOf("negociable")>-1 || qn.indexOf("faire une offre")>-1 || qn.indexOf("deposer une offre")>-1){
-          return "Les prix affichés sont les prix demandés. Pour une offre, ça se discute directement avec Shawn lors de son appel.";
+          return "Les prix affichés sont les prix demandés. Pour une offre, ça se discute directement lors de l'appel de suivi.";
         }
         if(qn.indexOf("financement")>-1 || qn.indexOf("financer")>-1 || qn.indexOf("hypotheque")>-1 || qn.indexOf("prequalification")>-1){
-          return "Pour le financement, Shawn te confirmera les options lors de son appel.";
+          return "Pour le financement, Signature SB te confirmera les options lors de son appel.";
         }
         if((qn.indexOf("limite de temps")>-1 || qn.indexOf("combien de temps")>-1 || qn.indexOf("delai")>-1) && (qn.indexOf("constru")>-1 || qn.indexOf("permis")>-1)){
-          return "Je n'ai pas de limite de temps confirmée à te donner pour construire. Shawn te confirmera ce point lors de son appel.";
+          return "Je n'ai pas de limite de temps confirmée à te donner pour construire. Signature SB te confirmera ce point lors de son appel.";
         }
         if(qn.indexOf("visiter")>-1 || qn.indexOf("visite")>-1){
-          return "Pour planifier une visite, complète ta demande ici : Shawn te rappellera et fixera le moment avec toi.";
+          return "Pour planifier une visite, complète ta demande ici : Signature SB te rappellera pour fixer le moment avec toi.";
         }
         if(qn.indexOf("vercingetorix")>-1 && (qn.indexOf("septique")>-1 || qn.indexOf("sol")>-1 || qn.indexOf("roc")>-1 || qn.indexOf("excavation")>-1)){
           return "Pour Vercingétorix, l'étude INGÉO (mai 2025) indique du roc à 1,0 m : on privilégie une installation septique hors-sol.";
@@ -1077,11 +1076,11 @@ var _pa = document.querySelector("img[data-avatar-copy]"); if (_pa && AVATAR_SRC
           step = "done"; renderOptions();
           botSay("— APERÇU LOCAL : envoi simulé, aucune demande réelle n'a été transmise. La demande contiendrait : nom, téléphone, courriel, terrain et les réponses du parcours. —");
           if(draft.intention==="Planifier une visite"){
-            botSay("C'est envoyé ! Shawn te rappelle au "+draft.phone+" pour confirmer ta visite de la "+draft.terrain+" ("+draft.visitMoment.toLowerCase()+"). Merci ! 🏡");
+            botSay("C'est envoyé ! Signature SB te rappelle au "+draft.phone+" pour confirmer ta visite de la "+draft.terrain+" ("+draft.visitMoment.toLowerCase()+"). Merci ! 🏡");
           } else if(draft.documentation.indexOf("Oui")===0 && draft.terrain==="Les 4"){
-            botSay("C'est envoyé ! 📩 La documentation complète des 4 terrains partira à ton courriel ("+draft.email+"), et Signature SB te rappelle au "+draft.phone+". Et Shawn te contactera personnellement pour en discuter plus en détail. Merci !");
+            botSay("C'est envoyé ! 📩 La documentation complète des 4 terrains partira à ton courriel ("+draft.email+"), et Signature SB te rappelle au "+draft.phone+". Merci !");
           } else if(draft.documentation.indexOf("Oui")===0){
-            botSay("C'est envoyé ! 📩 La documentation de la "+draft.terrain+" partira à ton courriel ("+draft.email+"), et Signature SB te rappelle au "+draft.phone+". Et Shawn te contactera personnellement pour en discuter plus en détail. Merci !");
+            botSay("C'est envoyé ! 📩 La documentation de la "+draft.terrain+" partira à ton courriel ("+draft.email+"), et Signature SB te rappelle au "+draft.phone+". Merci !");
           } else {
             botSay("C'est envoyé ! Signature SB te rappelle rapidement au "+draft.phone+". Merci ! 🏡");
           }
@@ -1113,11 +1112,11 @@ var _pa = document.querySelector("img[data-avatar-copy]"); if (_pa && AVATAR_SRC
           if(card) card.remove();
           step = "done"; renderOptions();
           if(draft.intention==="Planifier une visite"){
-            botSay("C'est envoyé ! Shawn te rappelle au "+draft.phone+" pour confirmer ta visite de la "+draft.terrain+" ("+draft.visitMoment.toLowerCase()+"). Merci ! 🏡");
+            botSay("C'est envoyé ! Signature SB te rappelle au "+draft.phone+" pour confirmer ta visite de la "+draft.terrain+" ("+draft.visitMoment.toLowerCase()+"). Merci ! 🏡");
           } else if(draft.documentation.indexOf("Oui")===0 && draft.terrain==="Les 4"){
-            botSay("C'est envoyé ! 📩 La documentation complète des 4 terrains partira à ton courriel ("+draft.email+"), et Signature SB te rappelle au "+draft.phone+". Et Shawn te contactera personnellement pour en discuter plus en détail. Merci !");
+            botSay("C'est envoyé ! 📩 La documentation complète des 4 terrains partira à ton courriel ("+draft.email+"), et Signature SB te rappelle au "+draft.phone+". Merci !");
           } else if(draft.documentation.indexOf("Oui")===0){
-            botSay("C'est envoyé ! 📩 La documentation de la "+draft.terrain+" partira à ton courriel ("+draft.email+"), et Signature SB te rappelle au "+draft.phone+". Et Shawn te contactera personnellement pour en discuter plus en détail. Merci !");
+            botSay("C'est envoyé ! 📩 La documentation de la "+draft.terrain+" partira à ton courriel ("+draft.email+"), et Signature SB te rappelle au "+draft.phone+". Merci !");
           } else {
             botSay("C'est envoyé ! Signature SB te rappelle rapidement au "+draft.phone+". Merci ! 🏡");
           }
@@ -1209,7 +1208,7 @@ var _pa = document.querySelector("img[data-avatar-copy]"); if (_pa && AVATAR_SRC
         }
         if(step==="name"){
           userSay(text);
-          if(text.length<2){ botSay("Il me faut ton nom pour la demande — c'est à ce nom que Shawn te répondra. Ton nom ?"); return; }
+          if(text.length<2){ botSay("Il me faut ton nom pour la demande — c'est à ce nom qu'on te répondra. Ton nom ?"); return; }
           draft.name=text; step="phone"; botSay("Ton numéro de téléphone ?"); return;
         }
         if(step==="email"){
