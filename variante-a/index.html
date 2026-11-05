@@ -340,13 +340,22 @@ footer .nom{color:var(--noir);font-weight:800;font-size:14.5px}
   };
   if(window.sbHasConsent()) window.sbStartPixel();
 </script>
+<style id="cadre-symetrique">
+.hero .contenu .wrap{margin-inline:auto;text-align:center}
+.hero h1{margin-inline:auto}
+.hero .sous{margin-inline:auto}
+.hero .crochets{display:flex;flex-direction:column;align-items:center;padding:0}
+.hero .crochets li{width:100%;text-align:center}
+.hero .micro{margin-inline:auto;text-align:center}
+@media(min-width:760px){.hero .photo{height:720px}}
+</style>
 </head>
 <body>
 <div class="preview-banner">APERÇU LOCAL — VARIANTE A — Promesse d’abord — Aucun envoi réel : le clavardage est simulé, rien n'est transmis.</div>
 
 
 <header class="hero">
-  <img class="photo" src="img/routier.jpg" alt="Le lac Raymond, au bord du terrain de la rue du Routier">
+  <img class="photo" src="img/hero-lac.jpg" alt="Le lac Raymond, au bord du terrain de la rue du Routier">
   <div class="voile"></div>
   <div class="contenu">
     <div class="wrap">
